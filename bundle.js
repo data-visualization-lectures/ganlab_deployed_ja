@@ -485,7 +485,7 @@ class GANLab extends GANLabPolymer {
     }
     onClickFinishDrawingButton() {
         if (this.drawing.drawingPositions.length === 0) {
-            alert('Draw something on canvas');
+            alert('キャンバスに何か描いてください');
         }
         else {
             const drawingElement = this.querySelector('#drawing-container');
