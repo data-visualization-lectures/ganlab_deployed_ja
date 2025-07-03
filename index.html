@@ -21451,10 +21451,10 @@ This element has `role="listitem"` by default. Depending on usage, it may be mor
             <button id="next-step-g-button" title="生成器のみを1エポック訓練">
               生成器
             </button>
-            <button id="next-step-d-button" title="判別器のみを1エポック訓練">
-              判別器
+            <button id="next-step-d-button" title="識別器のみを1エポック訓練">
+              識別器
             </button>
-            <button id="next-step-all-button" title="判別器と生成器の両方を1エポック訓練">
+            <button id="next-step-all-button" title="識別器と生成器の両方を1エポック訓練">
               両方
             </button>
           </div>
@@ -21817,19 +21817,19 @@ This element has `role="listitem"` by default. Depending on usage, it may be mor
               </div>
               <div id="tooltip-d-prediction" class="tooltip tooltip-for-d" style="top: 0; left: 150px">
                 <div class="tooltip-number">2</div>
-                判別器がサンプルを分類
+                識別器がサンプルを分類
               </div>
               <div id="tooltip-d-loss" class="tooltip tooltip-for-d" style="top: 0; left: 300px">
                 <div class="tooltip-number">3</div>
-                判別器損失を計算
+                識別器損失を計算
               </div>
               <div id="tooltip-d-gradients" class="tooltip tooltip-for-d" style="top: 0; left: 450px">
                 <div class="tooltip-number">4</div>
-                判別器勾配を計算
+                識別器勾配を計算
               </div>
               <div id="tooltip-update-discriminator" class="tooltip tooltip-for-d" style="top: 0; left: 600px">
                 <div class="tooltip-number">5</div>
-                勾配に基づいて判別器を更新
+                勾配に基づいて識別器を更新
               </div>
               <div id="tooltip-g-generated-samples" class="tooltip tooltip-for-g" style="top: 500px; left: 0px">
                 <div class="tooltip-number">1</div>
@@ -21837,7 +21837,7 @@ This element has `role="listitem"` by default. Depending on usage, it may be mor
               </div>
               <div id="tooltip-g-prediction" class="tooltip tooltip-for-g" style="top: 500px; left: 150px">
                 <div class="tooltip-number">2</div>
-                判別器が偽のサンプルのみを分類
+                識別器が偽のサンプルのみを分類
               </div>
               <div id="tooltip-g-loss" class="tooltip tooltip-for-g" style="top: 500px; left: 300px">
                 <div class="tooltip-number">3</div>
@@ -21888,7 +21888,7 @@ This element has `role="listitem"` by default. Depending on usage, it may be mor
               <div class="layers-descriptions-section">
                 格子セルの背景色は
                 <span id="toggle-right-discriminator" class="toggle-right checked" title="click to toggle this layer" style="color: rgb(64, 128, 247);">
-                    判別器</span>の分類を表しています。
+                    識別器</span>の分類を表しています。
                 <br>
                 <span style="color: var(--real-data-color);">緑の領域</span>
                 のサンプルは実際のものである可能性が高く、
@@ -22206,7 +22206,7 @@ inializePolymerPage();
     </p>
     
     <p>      
-      GANを定義する大きな洞察は、このモデリング問題を一種のコンテストとして設定することです。これが名前の「敵対的」な部分の由来です。重要なアイデアは、1つではなく、2つの競合するネットワークを構築することです：<span style="color: var(--generator-color);"><strong>生成器</strong></span>と<span style="color: var(--discriminator-color);"><strong>判別器</strong></span>です。生成器はランダムな<span style="color: var(--generator-color);">合成出力</span>（例えば、顔の画像）を作成しようとし、一方で判別器はこれらを<span style="color: var(--real-data-color);">実際の出力</span>（例えば、有名人のデータベース）から区別しようとします。2つのネットワークが対戦することで、両方がどんどん良くなっていき、最終的にリアルな出力を生成する生成器ネットワークが得られることが期待されます。
+      GANを定義する大きな洞察は、このモデリング問題を一種のコンテストとして設定することです。これが名前の「敵対的」な部分の由来です。重要なアイデアは、1つではなく、2つの競合するネットワークを構築することです：<span style="color: var(--generator-color);"><strong>生成器</strong></span>と<span style="color: var(--discriminator-color);"><strong>識別器</strong></span>です。生成器はランダムな<span style="color: var(--generator-color);">合成出力</span>（例えば、顔の画像）を作成しようとし、一方で識別器はこれらを<span style="color: var(--real-data-color);">実際の出力</span>（例えば、有名人のデータベース）から区別しようとします。2つのネットワークが対戦することで、両方がどんどん良くなっていき、最終的にリアルな出力を生成する生成器ネットワークが得られることが期待されます。
     </p>
 
     <p>
@@ -22261,11 +22261,11 @@ inializePolymerPage();
     </div>
     
     <h4>
-      生成器と判別器の可視化。
+      生成器と識別器の可視化。
     </h4>
     
     <p>
-      GAN内の<span style="color: var(--generator-color);">生成器</span>と<span style="color: var(--discriminator-color);">判別器</span>が小さなコンテストを行い、互いに競合し、<span style="color: var(--generator-color);">偽のサンプル</span>を<span style="color: var(--real-data-color);">実際のサンプル</span>により類似するように反復的に更新していることを思い出してください。GAN Labは彼らの間の相互作用を可視化します。
+      GAN内の<span style="color: var(--generator-color);">生成器</span>と<span style="color: var(--discriminator-color);">識別器</span>が小さなコンテストを行い、互いに競合し、<span style="color: var(--generator-color);">偽のサンプル</span>を<span style="color: var(--real-data-color);">実際のサンプル</span>により類似するように反復的に更新していることを思い出してください。GAN Labは彼らの間の相互作用を可視化します。
     </p>
 
     <p>
@@ -22281,34 +22281,34 @@ inializePolymerPage();
     </div>
     
     <p>
-      <strong>判別器。</strong>
-      生成器が<span style="color: var(--generator-color);">偽のサンプル</span>を作成する際、二項分類器である<span style="color: var(--discriminator-color);">判別器</span>は、それらを<span style="color: var(--real-data-color);">実際のサンプル</span>から区別しようとします。GAN Labは、その決定境界を2Dヒートマップとして可視化します（<a href="http://playground.tensorflow.org"><em>TensorFlow Playground</em></a>に類似）。格子セルの背景色は、分類器の結果の信頼度値を符号化します。<span style="background-color: var(--real-data-color); color: white;">濃い緑</span>は、その領域のサンプルが実際のものである可能性が高いことを意味し、<span style="background-color: var(--generator-color); color: white;">濃い紫</span>は、偽のものである可能性が高いことを意味します。GANが最適解に近づくにつれて、ヒートマップ全体がより<span style="background-color: rgb(117, 117, 117); color: white;">灰色</span>になり、判別器がもはや偽の例を実際のものから簡単に区別できなくなることを示します。
+      <strong>識別器。</strong>
+      生成器が<span style="color: var(--generator-color);">偽のサンプル</span>を作成する際、二項分類器である<span style="color: var(--discriminator-color);">識別器</span>は、それらを<span style="color: var(--real-data-color);">実際のサンプル</span>から区別しようとします。GAN Labは、その決定境界を2Dヒートマップとして可視化します（<a href="http://playground.tensorflow.org"><em>TensorFlow Playground</em></a>に類似）。格子セルの背景色は、分類器の結果の信頼度値を符号化します。<span style="background-color: var(--real-data-color); color: white;">濃い緑</span>は、その領域のサンプルが実際のものである可能性が高いことを意味し、<span style="background-color: var(--generator-color); color: white;">濃い紫</span>は、偽のものである可能性が高いことを意味します。GANが最適解に近づくにつれて、ヒートマップ全体がより<span style="background-color: rgb(117, 117, 117); color: white;">灰色</span>になり、識別器がもはや偽の例を実際のものから簡単に区別できなくなることを示します。
     </p>
     
     <div class="supporting-figure">
       <img src="figures/figure-discriminator-heatmap.png">
         <div class="figure-caption">
-        図4. 判別器の性能は2Dヒートマップを通して解釈できます。ここでは、ほとんどの実際のサンプルが分類表面の緑の領域にあり（偽のサンプルは紫の領域にある）ため、判別器は良好に機能しています。
+        図4. 識別器の性能は2Dヒートマップを通して解釈できます。ここでは、ほとんどの実際のサンプルが分類表面の緑の領域にあり（偽のサンプルは紫の領域にある）ため、識別器は良好に機能しています。
         </div>
     </div>
     
     <h4>
-      生成器と判別器間の相互作用の理解。
+      生成器と識別器間の相互作用の理解。
     </h4>
     
     <p>
-      GANでは、その2つのネットワークが反復的に自身を更新する際に、互いに影響し合います。GAN Labの素晴らしい用途は、その可視化を使用して、<span style="color: var(--generator-color);">生成器</span>がますますリアルな偽のサンプルを生成するために自身を改善するよう段階的に更新する方法を学習することです。生成器は<span style="color: var(--discriminator-color);">判別器</span>を欺こうとすることでこれを行います。判別器が<span style="color: var(--generator-color);">偽のサンプル</span>を<span style="color: var(--real-data-color);">実際のもの</span>として分類するとき、生成器の損失値は減少します（判別器にとっては悪いが、生成器にとっては良い）。GAN Labは、生成器がその成功を達成するような偽のサンプルに対する勾配を（<span style="color: var(--gradient-color);">ピンクの線</span>として）可視化します。
+      GANでは、その2つのネットワークが反復的に自身を更新する際に、互いに影響し合います。GAN Labの素晴らしい用途は、その可視化を使用して、<span style="color: var(--generator-color);">生成器</span>がますますリアルな偽のサンプルを生成するために自身を改善するよう段階的に更新する方法を学習することです。生成器は<span style="color: var(--discriminator-color);">識別器</span>を欺こうとすることでこれを行います。識別器が<span style="color: var(--generator-color);">偽のサンプル</span>を<span style="color: var(--real-data-color);">実際のもの</span>として分類するとき、生成器の損失値は減少します（識別器にとっては悪いが、生成器にとっては良い）。GAN Labは、生成器がその成功を達成するような偽のサンプルに対する勾配を（<span style="color: var(--gradient-color);">ピンクの線</span>として）可視化します。
     </p>
 
     <div class="supporting-figure">
       <img src="figures/figure-gradients-interplay.png">
         <div class="figure-caption">
-        図5. 偽のサンプルの移動方向は、それらのサンプルの現在の位置と判別器の現在の分類表面（背景色によって可視化）に基づく生成器の勾配（ピンクの線）によって示されます。
+        図5. 偽のサンプルの移動方向は、それらのサンプルの現在の位置と識別器の現在の分類表面（背景色によって可視化）に基づく生成器の勾配（ピンクの線）によって示されます。
         </div>
     </div>
     
     <p>
-      この方法で、<span style="color: var(--generator-color);">生成器</span>は、さらにリアルなサンプルを生成するよう段階的に改善されます。偽のサンプルが更新されると、<span style="color: var(--discriminator-color);">判別器</span>はそれに応じて更新され、その決定境界を微調整し、自身を欺こうとする次のバッチの偽のサンプルを待ちます。この反復的更新プロセスは、判別器が<span style="color: var(--real-data-color);">実際の</span>サンプルと<span style="color: var(--generator-color);">偽の</span>サンプルを区別できなくなるまで続きます。
+      この方法で、<span style="color: var(--generator-color);">生成器</span>は、さらにリアルなサンプルを生成するよう段階的に改善されます。偽のサンプルが更新されると、<span style="color: var(--discriminator-color);">識別器</span>はそれに応じて更新され、その決定境界を微調整し、自身を欺こうとする次のバッチの偽のサンプルを待ちます。この反復的更新プロセスは、識別器が<span style="color: var(--real-data-color);">実際の</span>サンプルと<span style="color: var(--generator-color);">偽の</span>サンプルを区別できなくなるまで続きます。
     </p>
     
     <h4>
